@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: finance-tracker
+  datasource:
+    url: ${DB_URL:jdbc:mysql://zephyr.proxy.rlwy.net:34119/railway?useSSL=false&allowPublicKeyRetrieval=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:qpEoIHQFmGNJQmGDFcSkZylumjWtzssH}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+# Server port configuration
+server:
+  port: 8080
+
+# JWT Configuration Details
+app:
+  jwt:
+    secret: ${JWT_SECRET:407A4672764B6150645367566B59703373367639792442264528482B4D625165}
+    expiration-ms: 86400000 # 24 hours
